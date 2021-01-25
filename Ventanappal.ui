@@ -6,60 +6,107 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>984</width>
-    <height>600</height>
+    <width>1950</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="campo" native="true">
+   <widget class="QPushButton" name="boton_cargar">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>961</width>
-      <height>391</height>
+      <x>30</x>
+      <y>460</y>
+      <width>156</width>
+      <height>23</height>
      </rect>
     </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="text">
+     <string>Cargar Imagen</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_histograma">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>460</y>
+      <width>156</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Graficar histograma</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_cerrar">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>460</y>
+      <width>156</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cerrar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>450</y>
+      <width>156</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="campo_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>931</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget_3">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>941</width>
-       <height>361</height>
+       <width>911</width>
+       <height>381</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="layout"/>
+     <layout class="QVBoxLayout" name="layout_3"/>
     </widget>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
+   <widget class="QWidget" name="campo_4" native="true">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>520</y>
-      <width>481</width>
-      <height>61</height>
+      <x>980</x>
+      <y>20</y>
+      <width>951</width>
+      <height>391</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QWidget" name="verticalLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>931</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="layout_5"/>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

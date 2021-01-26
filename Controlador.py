@@ -8,12 +8,12 @@ import sys
 
 class Controlador():
     def __init__(self, vista, modelo):
-        self.__mivista= vista
-        self.__mimodelo=modelo
+        self.__vista= vista
+        self.__modelo=modelo
 
+    def cargar_img(self,nimagen):
+        return self.__modelo.cargar_img
 
-    def mostrarimg(self,nimagen):
-        return self.__mimodelo.mostrarimg(nimagen)
 
         
 def main():

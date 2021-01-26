@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QMessageBox, QVBoxLayout
 from PyQt5.uic import loadUi
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
-import numpy as np
+
 from matplotlib.figure import Figure
 
 
@@ -58,6 +58,7 @@ class Ventanappal(QMainWindow):
             self.boton_histograma.setEnabled(True)
             self.boton_contar.setEnabled(True)
             self.boton_cambios.setEnabled(True)
+            self.__coord.cargar_img(archivo_cargado)
 
         else:
             msj = QMessageBox(self)

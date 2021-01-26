@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1950</width>
-    <height>700</height>
+    <width>1240</width>
+    <height>878</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QPushButton" name="boton_cargar">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>460</y>
-      <width>156</width>
+      <x>760</x>
+      <y>50</y>
+      <width>191</width>
       <height>23</height>
      </rect>
     </property>
@@ -30,9 +30,9 @@
    <widget class="QPushButton" name="boton_histograma">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>460</y>
-      <width>156</width>
+      <x>990</x>
+      <y>50</y>
+      <width>191</width>
       <height>23</height>
      </rect>
     </property>
@@ -43,9 +43,9 @@
    <widget class="QPushButton" name="boton_cerrar">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>460</y>
-      <width>156</width>
+      <x>1020</x>
+      <y>800</y>
+      <width>171</width>
       <height>23</height>
      </rect>
     </property>
@@ -53,26 +53,26 @@
      <string>Cerrar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="boton_equalizar">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>450</y>
-      <width>156</width>
+      <x>1020</x>
+      <y>720</y>
+      <width>171</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Equalizar</string>
     </property>
    </widget>
    <widget class="QWidget" name="campo_2" native="true">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>20</y>
-      <width>931</width>
-      <height>401</height>
+      <y>30</y>
+      <width>651</width>
+      <height>291</height>
      </rect>
     </property>
     <widget class="QWidget" name="verticalLayoutWidget_3">
@@ -80,8 +80,8 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>911</width>
-       <height>381</height>
+       <width>631</width>
+       <height>271</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="layout_3"/>
@@ -90,10 +90,10 @@
    <widget class="QWidget" name="campo_4" native="true">
     <property name="geometry">
      <rect>
-      <x>980</x>
-      <y>20</y>
-      <width>951</width>
-      <height>391</height>
+      <x>30</x>
+      <y>340</y>
+      <width>931</width>
+      <height>501</height>
      </rect>
     </property>
     <widget class="QWidget" name="verticalLayoutWidget_5">
@@ -101,12 +101,638 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>931</width>
-       <height>371</height>
+       <width>911</width>
+       <height>481</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="layout_5"/>
     </widget>
+   </widget>
+   <widget class="QComboBox" name="box_cambiar_canal">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>300</y>
+      <width>161</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Todos</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Rojo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Verde</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Azul</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="box_cambiar_colores">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>350</y>
+      <width>161</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>RGB</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>HSV</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>HLS</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>LAB</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>CMYK</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>GRAY</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>YCRCB</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>450</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;RECORTAR IMAGEN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_xi">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>490</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>490</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>px inicial en X:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>520</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>px final en X:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edir_xf">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>520</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>550</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>470</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>570</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>px inicial en Y:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_yf">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>600</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>600</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>px final en Y:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_yi">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>570</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>640</y>
+      <width>171</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Graficar</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>400</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>SUMAR</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>RESTAR</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MULTIPLICAR</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DIVIDIR</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="edit_operacion">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>400</y>
+      <width>61</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_contar">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>760</y>
+      <width>171</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Contar células</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>110</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Columnas</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_columnas">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>110</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>140</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Filas</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_filas">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>140</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>170</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Canales</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_canales">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>170</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>230</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mínimo Canal R</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_minr">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>230</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>200</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Máximo Canal R</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_maxr">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>200</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>140</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mínimo Canal V</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_minv">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>140</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>110</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Máximo Canal V</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_maxv">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>110</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>230</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mínimo Canal A</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_mina">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>230</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>200</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Máximo Canal A</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_maxa">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>200</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>670</y>
+      <width>251</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>270</y>
+      <width>471</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>690</y>
+      <width>251</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_6">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>260</y>
+      <width>471</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_7">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>80</y>
+      <width>471</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_8">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>90</y>
+      <width>471</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

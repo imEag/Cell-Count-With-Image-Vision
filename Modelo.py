@@ -110,7 +110,13 @@ class sistema:
             imgYUV = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2YUV)
             return imgYUV
         
-    
+    def equalizar(self):
+        img_original = np.copy(self.imagen)
+        imgG=cv2.cvtColor(img_original, cv2.COLOR_RGB2GRAY)
+        img=np.array(imgG, np.dtype('float32'))
+        img2=img-np.min(img)
+        img2=img2*255/np.max(img2)
+        return img2
     
     
     

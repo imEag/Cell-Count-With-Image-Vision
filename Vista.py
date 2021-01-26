@@ -17,7 +17,7 @@ class Dibujo(FigureCanvas):
 
     def graficar_imagen(self,img):
         self.axes.clear()
-        self.axes.imshow(img)
+        self.axes.imshow(img, cmap="gray", vmin=0, vmax=255)
         self.axes.figure.canvas.draw()
 
     def graficar_histograma(self,img):
@@ -104,6 +104,7 @@ class Ventanappal(QMainWindow):
             self.ok_canales.setEnabled(True)
             self.ok_espacio_color.setEnabled(True)
             self.ok_operaciones.setEnabled(True)
+            self.boton_equalizar.setEnabled(True)
 
             
             img=cv2.imread(archivo_cargado)
@@ -166,8 +167,9 @@ class Ventanappal(QMainWindow):
         pass
 
     def equalizar(self):
-        pass
-
+        img_equalizada=self.__coord.equalizar()
+        self.canvas_imagen.graficar_imagen(img_equalizada)
+        
     def cerrar(self):
         self.close()
     def setcoord(self,coord):

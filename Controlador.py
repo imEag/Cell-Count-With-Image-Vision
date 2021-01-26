@@ -31,6 +31,8 @@ class Controlador():
     def retornar_operacion(self,operacion,escalar):
         return self.__modelo.retornar_operacion(operacion,escalar)
     
+    def equalizar(self):
+        return self.__modelo.equalizar()
 
 
 

@@ -1,39 +1,39 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-img=cv2.imread('../cell.jpeg')
+img=cv2.imread('../cell2.png')
 print('img cargada')
 #img2 en BGR
-img2=np.copy(img)
+imgBGR=np.copy(img)
 
-imgRGB=cv2.cvtColor(img2,cv2.COLOR_BGR2RGB)
-imgBGR=cv2.cvtColor(img2,cv2.COLOR_RGB2BGR)
-imgHSV=cv2.cvtColor(img2,cv2.COLOR_BGR2HSV)
-imgHLS=cv2.cvtColor(img2,cv2.COLOR_BGR2HLS)
-imgLAB=cv2.cvtColor(img2,cv2.COLOR_BGR2LAB)
-imgGRAY=cv2.cvtColor(img2,cv2.COLOR_BGR2GRAY)
-imgYCRCB=cv2.cvtColor(img2,cv2.COLOR_BGR2YCrCb)
+imgRGB=cv2.cvtColor(imgBGR,cv2.COLOR_BGR2RGB)
+#imgBGR=cv2.cvtColor(imgBGR,cv2.COLOR_RGB2BGR)
+imgHSV=cv2.cvtColor(imgBGR,cv2.COLOR_BGR2HSV)
+imgHLS=cv2.cvtColor(imgBGR,cv2.COLOR_BGR2HLS)
+imgLAB=cv2.cvtColor(imgBGR,cv2.COLOR_BGR2LAB)
+imgGRAY=cv2.cvtColor(imgBGR,cv2.COLOR_BGR2GRAY)
+imgYCRCB=cv2.cvtColor(imgBGR,cv2.COLOR_BGR2YCrCb)
 
 
 plt.figure(figsize=(15,6))
 plt.subplot(3,3,1)
-plt.imshow(img2)
+plt.imshow(imgBGR)
 plt.subplot(3,3,2)
 plt.imshow(imgRGB)
-plt.subplot(2,3,3)
+plt.subplot(3,3,3)
 plt.imshow(imgHSV)
 plt.subplot(3,3,4)
 plt.imshow(imgHLS)
 plt.subplot(3,3,5)
 plt.imshow(imgLAB)
 plt.subplot(3,3,6)
-plt.imshow(imgGRAY)
+plt.imshow(imgGRAY, cmap="gray")
 plt.subplot(3,3,7)
 plt.imshow(imgYCRCB)
-plt.subplot(3,3,8)
-plt.imshow(img2)
-plt.subplot(3,3,9)
-plt.imshow(img2)
+# plt.subplot(3,3,8)
+# plt.imshow(imgBGR)
+# plt.subplot(3,3,9)
+# plt.imshow(imgBGR)
 
 
 

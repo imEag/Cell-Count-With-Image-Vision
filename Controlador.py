@@ -1,4 +1,3 @@
-
 from Modelo import sistema
 from Vista import Ventanappal
 from PyQt5.QtWidgets import QApplication
@@ -13,8 +12,6 @@ class Controlador():
 
     def cargar_img(self,imagen):
         return self.__modelo.cargar_img(imagen)
-<<<<<<< HEAD
-=======
 
     def retornar_imagen(self):
         return self.__modelo.retornar_imagen()
@@ -31,7 +28,6 @@ class Controlador():
     def retornar_operacion(self,operacion,escalar):
         return self.__modelo.retornar_operacion(operacion,escalar)
 
->>>>>>> bdfb87cfcd6888d280f2edf5d8f3079251851945
 
 
         
@@ -46,5 +42,3 @@ def main():
     sys.exit(app.exec_())
 
 main()
-
-

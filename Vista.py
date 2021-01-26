@@ -50,7 +50,6 @@ class Ventanappal(QMainWindow):
 
         self.boton_histograma.setEnabled(False)
         self.boton_contar.setEnabled(False)
-        self.boton_cambios.setEnabled(False)
         self.boton_contar.setEnabled(False)
         self.boton_recorte.setEnabled(False)
         self.boton_equalizar.setEnabled(False)
@@ -64,7 +63,7 @@ class Ventanappal(QMainWindow):
         self.boton_recorte.clicked.connect(self.graficar_recorte)
         self.boton_equalizar.clicked.connect(self.equalizar)
         self.boton_cargar.clicked.connect(self.cargar_img)
-        self.cancelar.clicked.connect(self.cerrar)
+        self.boton_cerrar.clicked.connect(self.cerrar)
         self.boton_histograma.clicked.connect(self.graficar_histograma)
 
         self.ok_canales.clicked.connect(self.graficar_canal)
@@ -75,9 +74,9 @@ class Ventanappal(QMainWindow):
  
         self.layout_histograma.addWidget(self.canvas_histograma)
 
-        self.canvas_imagen = Dibujo(self.campo_imagen)
+        self.canvas_imagen = Dibujo(self.campo_img)
  
-        self.layout_imagen.addWidget(self.canvas_imagen)
+        self.layout_img.addWidget(self.canvas_imagen)
 
     def graficar_canal(self):
         canal=self.box_cambiar_canal.currentText()
@@ -96,11 +95,11 @@ class Ventanappal(QMainWindow):
         self.canvas_imagen.graficar_imagen(img_canal)
 
     def cargar_img(self):
-        archivo_cargado, _ = QFileDialog.getOpenFileName(self, "Abrir imagen","","Archivos jpg (*.jpg)","","Archivos png (*.png)")
+        archivo_cargado, _ = QFileDialog.getOpenFileName(self, "Abrir imagen","","Archivos png, jpeg, jpg (*.png *.jpg *.jpeg)")
         if archivo_cargado !='':
             self.boton_histograma.setEnabled(True)
             self.boton_contar.setEnabled(True)
-            self.boton_cambios.setEnabled(True)
+            self.boton_recorte.setEnabled(True)
 
             self.ok_canales.setEnabled(True)
             self.ok_espacio_color.setEnabled(True)

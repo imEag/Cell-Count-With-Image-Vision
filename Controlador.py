@@ -11,8 +11,8 @@ class Controlador():
         self.__vista= vista
         self.__modelo=modelo
 
-    def cargar_img(self,nimagen):
-        return self.__modelo.cargar_img
+    def cargar_img(self,imagen):
+        return self.__modelo.cargar_img(imagen)
 
 
         

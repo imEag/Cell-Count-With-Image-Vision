@@ -89,25 +89,25 @@ class sistema:
         elif espacio == 'BGR':
             return imgBGR
         elif espacio == 'HSV':
-            imgHSV = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2HSV)
+            imgHSV = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2HSV)
             return imgHSV
         elif espacio == 'HLS':
-            imgHLS = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2HLS)
+            imgHLS = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2HLS)
             return imgHLS
         elif espacio == 'Lab':
-            imgLab = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2Lab)
+            imgLab = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2Lab)
             return imgLab
         elif espacio == 'GRAY':
-            imgGRAY = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2GRAY)
+            imgGRAY = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2GRAY)
             return imgGRAY 
         elif espacio == 'YCRCB':
-            imgYCRCB = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2YCrCb)
+            imgYCRCB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2YCrCb)
             return imgYCRCB
         elif espacio == 'Luv':
-            imgLuv = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2Luv)
+            imgLuv = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2Luv)
             return imgLuv
         elif espacio == 'YUV':
-            imgYUV = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2YUV)
+            imgYUV = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2YUV)
             return imgYUV
         
     

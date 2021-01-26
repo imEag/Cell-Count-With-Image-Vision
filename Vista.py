@@ -80,6 +80,7 @@ class Ventanappal(QMainWindow):
 
     def graficar_canal(self):
         canal=self.box_cambiar_canal.currentText()
+        print(canal)
         img_canal=self.__coord.retornar_canal(canal)
         self.canvas_imagen.graficar_imagen(img_canal)
 

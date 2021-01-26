@@ -41,7 +41,7 @@ class sistema:
         lista_info = [row, col, chn, max_imaR, min_imaR, max_imaG, min_imaG, max_imaB, min_imaB]
         return lista_info
     
-    def graficar_canal(self, canal):
+    def retornar_canal(self, canal):
         if canal == 'Rojo':
             imgR=np.copy(self.imagen)
             imgR[:,:,1]=0
@@ -57,6 +57,8 @@ class sistema:
             imgB[:,:,1]=0
             imgB[:,:,0]=0
             return imgB
+        elif canal == 'TODOS LOS CANALES':
+            return self.imagen
     
     def retornar_imagen(self):
         return self.imagen

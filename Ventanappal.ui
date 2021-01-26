@@ -66,7 +66,7 @@
      <string>Equalizar</string>
     </property>
    </widget>
-   <widget class="QWidget" name="campo_2" native="true">
+   <widget class="QWidget" name="campo_histograma" native="true">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -84,10 +84,10 @@
        <height>271</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="layout_3"/>
+     <layout class="QVBoxLayout" name="layout_histograma"/>
     </widget>
    </widget>
-   <widget class="QWidget" name="campo_4" native="true">
+   <widget class="QWidget" name="campo_img" native="true">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -105,21 +105,21 @@
        <height>481</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="layout_5"/>
+     <layout class="QVBoxLayout" name="layout_img"/>
     </widget>
    </widget>
    <widget class="QComboBox" name="box_cambiar_canal">
     <property name="geometry">
      <rect>
       <x>1020</x>
-      <y>300</y>
+      <y>490</y>
       <width>161</width>
       <height>23</height>
      </rect>
     </property>
     <item>
      <property name="text">
-      <string>Todos</string>
+      <string>TODOS LOS CANALES</string>
      </property>
     </item>
     <item>
@@ -142,14 +142,14 @@
     <property name="geometry">
      <rect>
       <x>1020</x>
-      <y>350</y>
+      <y>540</y>
       <width>161</width>
       <height>23</height>
      </rect>
     </property>
     <item>
      <property name="text">
-      <string>RGB</string>
+      <string>ESPACIO COLOR RGB </string>
      </property>
     </item>
     <item>
@@ -186,9 +186,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>450</y>
-      <width>161</width>
+      <x>1010</x>
+      <y>290</y>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>
@@ -200,7 +200,7 @@
     <property name="geometry">
      <rect>
       <x>1130</x>
-      <y>490</y>
+      <y>330</y>
       <width>51</width>
       <height>23</height>
      </rect>
@@ -212,8 +212,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>490</y>
+      <x>1020</x>
+      <y>330</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -225,8 +225,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>520</y>
+      <x>1020</x>
+      <y>360</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -239,7 +239,7 @@
     <property name="geometry">
      <rect>
       <x>1130</x>
-      <y>520</y>
+      <y>360</y>
       <width>51</width>
       <height>23</height>
      </rect>
@@ -251,9 +251,9 @@
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>550</y>
-      <width>161</width>
+      <x>1010</x>
+      <y>390</y>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -264,8 +264,8 @@
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>470</y>
+      <x>890</x>
+      <y>270</y>
       <width>161</width>
       <height>20</height>
      </rect>
@@ -277,8 +277,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>570</y>
+      <x>1020</x>
+      <y>410</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -291,7 +291,7 @@
     <property name="geometry">
      <rect>
       <x>1130</x>
-      <y>600</y>
+      <y>440</y>
       <width>51</width>
       <height>23</height>
      </rect>
@@ -303,8 +303,8 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>600</y>
+      <x>1020</x>
+      <y>440</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -317,7 +317,7 @@
     <property name="geometry">
      <rect>
       <x>1130</x>
-      <y>570</y>
+      <y>410</y>
       <width>51</width>
       <height>23</height>
      </rect>
@@ -336,14 +336,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>Graficar</string>
+     <string>Graficar cambios</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
       <x>1020</x>
-      <y>400</y>
+      <y>590</y>
       <width>91</width>
       <height>23</height>
      </rect>
@@ -373,7 +373,7 @@
     <property name="geometry">
      <rect>
       <x>1120</x>
-      <y>400</y>
+      <y>590</y>
       <width>61</width>
       <height>23</height>
      </rect>
@@ -660,7 +660,7 @@
     <property name="geometry">
      <rect>
       <x>980</x>
-      <y>670</y>
+      <y>680</y>
       <width>251</width>
       <height>20</height>
      </rect>

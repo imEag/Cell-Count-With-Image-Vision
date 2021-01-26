@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 
 class sistema:
     def __init__(self):
-        self.__grafica=None
+        pass
 
     def cargar_img(self,imagen):
-        imagen=cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
+        #img=cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
         self.imagen = imagen
     
     def info_img(self):
@@ -56,4 +56,6 @@ class sistema:
             imgB[:,:,1]=0
             imgB[:,:,0]=0
             return imgB
-        
+    
+    def retornar_imagen(self):
+        return self.imagen

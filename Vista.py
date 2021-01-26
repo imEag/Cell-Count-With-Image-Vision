@@ -21,18 +21,18 @@ class Dibujo(FigureCanvas):
         self.axes.figure.canvas.draw()
 
     def graficar_histograma(self,img):
-
+        img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         R = cv2.calcHist([img],[0],None,[256],[0,256])
         G = cv2.calcHist([img],[1],None,[256],[0,256])
         B = cv2.calcHist([img],[2],None,[256],[0,256])
         self.axes.plot(B, 'r')
         self.axes.plot(G, 'g')
         self.axes.plot(R, 'b')
-        self.axes.title('Histograma')
-        self.axes.xlabel('Niveles')
-        self.axes.ylabel('Densidad')
+        self.axes.set_title('Histograma')
+        self.axes.set_xlabel('Niveles')
+        self.axes.set_ylabel('Densidad')
         self.axes.grid()
-        self.axes.xlim((0, 255))
+        self.axes.set_xlim((0, 255))
         self.axes.figure.canvas.draw()
 
 class Ventanappal(QMainWindow):
@@ -106,10 +106,12 @@ class Ventanappal(QMainWindow):
             self.ok_operaciones.setEnabled(True)
 
             img=cv2.imread(archivo_cargado)
-            resultado=self.__coord.cargar_img(img)
-            self.canvas_imagen.graficar_imagen(img)
+            img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            self.__coord.cargar_img(img)
+            imagen_retornada=self.__coord.retornar_imagen()
+            self.canvas_imagen.graficar_imagen(imagen_retornada)
             msj = QMessageBox(self)
-            msj.setText(resultado)
+            msj.setText("Imagen cargada")
             msj.show() 
 
         else:

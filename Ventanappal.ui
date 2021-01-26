@@ -235,7 +235,7 @@
      <string>px final en X:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="edir_xf">
+   <widget class="QLineEdit" name="edit_xf">
     <property name="geometry">
      <rect>
       <x>1130</x>
@@ -326,7 +326,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="boton_cambios">
     <property name="geometry">
      <rect>
       <x>1020</x>

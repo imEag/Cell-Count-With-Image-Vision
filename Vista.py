@@ -47,6 +47,8 @@ class Ventanappal(QMainWindow):
         self.edit_xf.setValidator(QIntValidator())
         self.edit_yi.setValidator(QIntValidator())
         self.edit_xf.setValidator(QIntValidator())
+        self.edit_operacion.setValidator(QIntValidator())
+        
 
         self.boton_histograma.setEnabled(False)
         self.boton_contar.setEnabled(False)
@@ -92,8 +94,14 @@ class Ventanappal(QMainWindow):
     def graficar_operaciones(self):
         operacion=self.box_operaciones.currentText()
         escalar=self.edit_operacion.text()
-        img_canal=self.__coord.retornar_operacion(operacion,escalar)
-        self.canvas_imagen.graficar_imagen(img_canal)
+        if escalar != '' and 0 <= int(escalar) < 256:    
+            img_canal=self.__coord.retornar_operacion(operacion,escalar)
+            self.canvas_imagen.graficar_imagen(img_canal)
+        
+        else:
+            msj = QMessageBox(self)
+            msj.setText('Ingrese un valor válido')
+            msj.show()
 
     def cargar_img(self):
         archivo_cargado, _ = QFileDialog.getOpenFileName(self, "Abrir imagen","","Archivos png, jpeg, jpg (*.png *.jpg *.jpeg)")
@@ -105,6 +113,7 @@ class Ventanappal(QMainWindow):
             self.ok_espacio_color.setEnabled(True)
             self.ok_operaciones.setEnabled(True)
             self.boton_equalizar.setEnabled(True)
+            self.ok_operaciones.setEnabled(True)
 
             
             img=cv2.imread(archivo_cargado)

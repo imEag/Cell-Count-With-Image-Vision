@@ -118,6 +118,21 @@ class sistema:
         img2=img2*255/np.max(img2)
         return img2
     
+    def retornar_operacion(self, op, escalar):
+        img = np.copy(self.imagen_recortada)
+        escalar = int(escalar)
+        if op == 'SUMAR':
+            img2 = img + escalar
+            return img2
+        elif op == 'RESTAR':
+            img2 = img - escalar
+            return img2
+        elif op == 'MULTIPLICAR':
+            img2 = img * escalar
+            return img2
+        elif op == 'DIVIDIR':
+            img2 = img / escalar
+            return img2
     
     
     

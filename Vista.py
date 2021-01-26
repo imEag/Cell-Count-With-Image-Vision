@@ -3,7 +3,7 @@ from PyQt5.QtGui import QIntValidator
 from PyQt5.QtWidgets import QApplication, QMessageBox, QVBoxLayout
 from PyQt5.uic import loadUi
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-
+import cv2
 
 from matplotlib.figure import Figure
 
@@ -44,6 +44,8 @@ class Ventanappal(QMainWindow):
         self.boton_cambios.setEnabled(self.graficar_cambios)
         self.boton_equalizar.setEnabled(self.equalizar)
 
+        #self.layout_histograma.
+
         # self.sc = Dibujo(self.campo1)
  
         # self.Layout1.addWidget(self.sc)
@@ -58,7 +60,8 @@ class Ventanappal(QMainWindow):
             self.boton_histograma.setEnabled(True)
             self.boton_contar.setEnabled(True)
             self.boton_cambios.setEnabled(True)
-            self.__coord.cargar_img(archivo_cargado)
+            self.img=cv2.imread(archivo_cargado)
+            self.__coord.cargar_img(self.img)
 
         else:
             msj = QMessageBox(self)

@@ -100,16 +100,20 @@ class Ventanappal(QMainWindow):
             self.boton_histograma.setEnabled(True)
             self.boton_contar.setEnabled(True)
             self.boton_recorte.setEnabled(True)
-
             self.ok_canales.setEnabled(True)
             self.ok_espacio_color.setEnabled(True)
             self.ok_operaciones.setEnabled(True)
 
+            
             img=cv2.imread(archivo_cargado)
             img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             self.__coord.cargar_img(img)
             imagen_retornada=self.__coord.retornar_imagen()
+            info_img=self.__coord.retornar_info_img()
+            self.mostrar_info_imagen(info_img)
             self.canvas_imagen.graficar_imagen(imagen_retornada)
+            
+            
             msj = QMessageBox(self)
             msj.setText("Imagen cargada")
             msj.show() 
@@ -122,23 +126,41 @@ class Ventanappal(QMainWindow):
     def graficar_histograma(self):
         img=self.__coord.retornar_imagen()
         self.canvas_histograma.graficar_histograma(img)
+        
+    def mostrar_info_imagen(self, info):
+        self.edit_filas.setText(str(info[0]))
+        self.edit_columnas.setText(str(info[1]))
+        self.edit_canales.setText(str(info[2]))
+        self.edit_maxr.setText(str(info[3]))
+        self.edit_minr.setText(str(info[4]))
+        self.edit_maxv.setText(str(info[5]))
+        self.edit_minv.setText(str(info[6]))
+        self.edit_maxa.setText(str(info[7]))
+        self.edit_mina.setText(str(info[8]))
 
     def graficar_recorte(self):
-        xi=self.edit_xi.text()
-        xf=self.edit_xf.text()
-        yi=self.edit_yi.text()
-        yf=self.edit_xf.text()
+        xi=int(self.edit_xi.text())
+        xf=int(self.edit_xf.text())
+        yi=int(self.edit_yi.text())
+        yf=int(self.edit_yf.text())
 
-
-        if xi!='' and xf!='' and yi!='' and yf!='':
-            if xi<self.edit_filas and xf<=self.edit_filas and yi<self.edit_columnas and yf<=self.edit_columnas:
+        # img_recorte=self.__coord.recortar_img(int(xi),int(xf),int(yi),int(yf))
+        # self.canvas_imagen.graficar_imagen(img_recorte)
+        # print(int(xi),int(xf),int(yi),int(yf))
+        # print(img_recorte)
+        
+        
+        if str(xi) !='' and str(xf) != '' and str(yi) != '' and str(yf) != '' and xf>xi and yf>yi:
+            if xi<int(self.edit_columnas.text()) and xf<=int(self.edit_columnas.text()) and yi<int(self.edit_filas.text()) and yf<=int(self.edit_filas.text()):
                 img_recorte=self.__coord.recortar_img(int(xi),int(xf),int(yi),int(yf))
                 self.canvas_imagen.graficar_imagen(img_recorte)
-
+        
+                
         else:
             msj = QMessageBox(self)
             msj.setText('Ingrese un valor válido')
             msj.show()
+        
     def contar_celulas(self):
         pass
 

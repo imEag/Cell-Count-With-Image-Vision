@@ -10,8 +10,9 @@ class sistema:
     def cargar_img(self,imagen):
         #img=cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
         self.imagen = imagen
+
     
-    def info_img(self):
+    def retornar_info_img(self):
         row, col, chn=np.shape(self.imagen)
         # print('Filas    ', row)
         # print('Columnas ', col)
@@ -59,3 +60,8 @@ class sistema:
     
     def retornar_imagen(self):
         return self.imagen
+    
+    def recortar_img(self, xi, xf, yi, yf):
+        img_recortada = np.copy(self.imagen)
+        print(xi, xf, yi, yf)
+        return img_recortada[yi:yf+1, xi:xf+1, :]

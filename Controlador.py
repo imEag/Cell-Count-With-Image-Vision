@@ -15,6 +15,9 @@ class Controlador():
 
     def retornar_imagen(self):
         return self.__modelo.retornar_imagen()
+    
+    def retornar_info_img(self):
+        return self.__modelo.retornar_info_img()
 
     def recortar_img(self,xi,xf,yi,yf):
         return self.__modelo.recortar_img(xi,xf,yi,yf)
@@ -27,6 +30,7 @@ class Controlador():
 
     def retornar_operacion(self,operacion,escalar):
         return self.__modelo.retornar_operacion(operacion,escalar)
+    
 
 
 

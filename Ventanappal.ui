@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1240</width>
-    <height>878</height>
+    <height>671</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
       <x>30</x>
       <y>340</y>
       <width>901</width>
-      <height>451</height>
+      <height>301</height>
      </rect>
     </property>
     <widget class="QWidget" name="verticalLayoutWidget_5">
@@ -50,7 +50,7 @@
        <x>10</x>
        <y>10</y>
        <width>881</width>
-       <height>431</height>
+       <height>281</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="layout_img"/>
@@ -62,8 +62,11 @@
       <x>940</x>
       <y>340</y>
       <width>291</width>
-      <height>451</height>
+      <height>301</height>
      </rect>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOn</enum>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -73,8 +76,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>289</width>
-       <height>449</height>
+       <width>272</width>
+       <height>365</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">

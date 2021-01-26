@@ -151,7 +151,12 @@
        <widget class="QComboBox" name="box_cambiar_colores">
         <item>
          <property name="text">
-          <string>ESPACIO COLOR RGB </string>
+          <string>ESPACIO COLOR RGB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BGR</string>
          </property>
         </item>
         <item>
@@ -166,12 +171,7 @@
         </item>
         <item>
          <property name="text">
-          <string>LAB</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>CMYK</string>
+          <string>Lab</string>
          </property>
         </item>
         <item>
@@ -182,6 +182,16 @@
         <item>
          <property name="text">
           <string>YCRCB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Luv</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>YUV</string>
          </property>
         </item>
        </widget>

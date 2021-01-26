@@ -77,3 +77,46 @@ class sistema:
         img_recortada=img[yi:yf+1, xi:xf+1, :]
         self.imagen_recortada = img_recortada
         return img_recortada
+    
+    def retornar_espacio_color(self, espacio):
+        imgRGB = np.copy(self.imagen_recortada)
+        #imgRGB llega en RGB
+        #luego convertir a BGR para trabajar con esta variable.
+        imgBGR = cv2.cvtColor(imgRGB, cv2.COLOR_RGB2BGR)
+        
+        if espacio == 'ESPACIO COLOR RGB':
+            return imgRGB
+        elif espacio == 'BGR':
+            return imgBGR
+        elif espacio == 'HSV':
+            imgHSV = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2HSV)
+            return imgHSV
+        elif espacio == 'HLS':
+            imgHLS = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2HLS)
+            return imgHLS
+        elif espacio == 'Lab':
+            imgLab = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2Lab)
+            return imgLab
+        elif espacio == 'GRAY':
+            imgGRAY = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2GRAY)
+            return imgGRAY 
+        elif espacio == 'YCRCB':
+            imgYCRCB = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2YCrCb)
+            return imgYCRCB
+        elif espacio == 'Luv':
+            imgLuv = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2Luv)
+            return imgLuv
+        elif espacio == 'YUV':
+            imgYUV = cv2.cvtColor(imgRGB, cv2.COLOR_BGR2YUV)
+            return imgYUV
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

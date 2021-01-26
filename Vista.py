@@ -85,7 +85,7 @@ class Ventanappal(QMainWindow):
         self.canvas_imagen.graficar_imagen(img_canal)
 
     def graficar_espacio_color(self):
-        espacio_color=self.box_espacio_color.currentText()
+        espacio_color=self.box_cambiar_colores.currentText()
         img_espacio_color=self.__coord.retornar_espacio_color(espacio_color)
         self.canvas_imagen.graficar_imagen(img_espacio_color)
 

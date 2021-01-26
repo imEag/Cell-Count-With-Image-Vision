@@ -8,10 +8,13 @@ class sistema:
         pass
 
     def cargar_img(self,imagen):
-        #img=cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
+        #el self.imagen almacenará la imagen que fue cargada originalmente, el self.imagen_cambios almacena la imagen con todos los cambios que se le
+        #hacen excepto recortes, en self.imagen_recortada se guarda la imagen recortada
         self.imagen = imagen
-
-    
+        self.imagen_cambios = np.copy(imagen)
+        self.imagen_recortada = np.copy(imagen)
+        
+        
     def retornar_info_img(self):
         row, col, chn=np.shape(self.imagen)
         # print('Filas    ', row)
@@ -42,28 +45,35 @@ class sistema:
         return lista_info
     
     def retornar_canal(self, canal):
+        #esta fx retorna la imagen en un solo canal. La imagen la edita a partir de la imagen recortada (self.imagen_recortada) y la guarda en imagen_cambios
         if canal == 'Rojo':
-            imgR=np.copy(self.imagen)
+            imgR=np.copy(self.imagen_recortada)
             imgR[:,:,1]=0
             imgR[:,:,2]=0
+            self.imagen_cambios = imgR 
             return imgR
         elif canal == 'Verde':
-            imgG=np.copy(self.imagen)
+            imgG=np.copy(self.imagen_recortada)
             imgG[:,:,0]=0
             imgG[:,:,2]=0
+            self.imagen_cambios = imgG 
             return imgG
         elif canal == 'Azul':
-            imgB=np.copy(self.imagen)
+            imgB=np.copy(self.imagen_recortada)
             imgB[:,:,1]=0
             imgB[:,:,0]=0
+            self.imagen_cambios = imgB
             return imgB
         elif canal == 'TODOS LOS CANALES':
+            self.imagen_cambios = np.copy(self.imagen)
             return self.imagen
+        
     
     def retornar_imagen(self):
         return self.imagen
     
     def recortar_img(self, xi, xf, yi, yf):
-        img_recortada = np.copy(self.imagen)
-        print(xi, xf, yi, yf)
-        return img_recortada[yi:yf+1, xi:xf+1, :]
+        img = np.copy(self.imagen)
+        img_recortada=img[yi:yf+1, xi:xf+1, :]
+        self.imagen_recortada = img_recortada
+        return img_recortada

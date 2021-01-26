@@ -140,10 +140,10 @@ class Ventanappal(QMainWindow):
         self.edit_mina.setText(str(info[8]))
 
     def graficar_recorte(self):
-        xi=int(self.edit_xi.text())
-        xf=int(self.edit_xf.text())
-        yi=int(self.edit_yi.text())
-        yf=int(self.edit_yf.text())
+        xi=self.edit_xi.text()
+        xf=self.edit_xf.text()
+        yi=self.edit_yi.text()
+        yf=self.edit_yf.text()
 
         # img_recorte=self.__coord.recortar_img(int(xi),int(xf),int(yi),int(yf))
         # self.canvas_imagen.graficar_imagen(img_recorte)
@@ -152,7 +152,7 @@ class Ventanappal(QMainWindow):
         
         
         if str(xi) !='' and str(xf) != '' and str(yi) != '' and str(yf) != '' and xf>xi and yf>yi:
-            if xi<int(self.edit_columnas.text()) and xf<=int(self.edit_columnas.text()) and yi<int(self.edit_filas.text()) and yf<=int(self.edit_filas.text()):
+            if int(xi)<int(self.edit_columnas.text()) and int(xf)<=int(self.edit_columnas.text()) and int(yi)<int(self.edit_filas.text()) and int(yf)<=int(self.edit_filas.text()):
                 img_recorte=self.__coord.recortar_img(int(xi),int(xf),int(yi),int(yf))
                 self.canvas_imagen.graficar_imagen(img_recorte)
         

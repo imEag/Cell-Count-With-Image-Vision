@@ -15,10 +15,25 @@ class Dibujo(FigureCanvas):
         self.axes = self.figura.add_subplot(111)
         FigureCanvas.__init__(self,self.figura)
 
-    def graficarimg(self,img):
+    def graficar_imagen(self,img):
+        self.axes.clear()
         self.axes.imshow(img)
         self.axes.figure.canvas.draw()
 
+    def graficar_histograma(self,img):
+
+        R = cv2.calcHist([img],[0],None,[256],[0,256])
+        G = cv2.calcHist([img],[1],None,[256],[0,256])
+        B = cv2.calcHist([img],[2],None,[256],[0,256])
+        self.axes.plot(B, 'r')
+        self.axes.plot(G, 'g')
+        self.axes.plot(R, 'b')
+        self.axes.title('Histograma')
+        self.axes.xlabel('Niveles')
+        self.axes.ylabel('Densidad')
+        self.axes.grid()
+        self.axes.xlim((0, 255))
+        self.axes.figure.canvas.draw()
 
 class Ventanappal(QMainWindow):
     def __init__(self, parent=None):
@@ -36,32 +51,67 @@ class Ventanappal(QMainWindow):
         self.boton_histograma.setEnabled(False)
         self.boton_contar.setEnabled(False)
         self.boton_cambios.setEnabled(False)
+        self.boton_contar.setEnabled(False)
+        self.boton_recorte.setEnabled(False)
+        self.boton_equalizar.setEnabled(False)
 
+        self.ok_canales.setEnabled(False)
+        self.ok_espacio_color.setEnabled(False)
+        self.ok_operaciones.setEnabled(False)
+
+
+        self.boton_contar.clicked.connect(self.contar_celulas)
+        self.boton_recorte.clicked.connect(self.graficar_recorte)
+        self.boton_equalizar.clicked.connect(self.equalizar)
         self.boton_cargar.clicked.connect(self.cargar_img)
         self.cancelar.clicked.connect(self.cerrar)
         self.boton_histograma.clicked.connect(self.graficar_histograma)
-        self.boton_contar.setEnabled(self.contar_celulas)
-        self.boton_cambios.setEnabled(self.graficar_cambios)
-        self.boton_equalizar.setEnabled(self.equalizar)
 
-        #self.layout_histograma.
+        self.ok_canales.clicked.connect(self.graficar_canal)
+        self.ok_espacio_color.clicked.connect(self.graficar_espacio_color)
+        self.ok_operaciones.clicked.connect(self.graficar_operaciones)
 
-        # self.sc = Dibujo(self.campo1)
+        self.canvas_histograma = Dibujo(self.campo_histograma)
  
-        # self.Layout1.addWidget(self.sc)
+        self.layout_histograma.addWidget(self.canvas_histograma)
 
-    # def mostrarimg(self):
-    #     nimagen=self.nimagen.text()
-    #     img=self.__coord.mostrarimg(nimagen)
-    #     self.sc.graficarimg(img)
+        self.canvas_imagen = Dibujo(self.campo_imagen)
+ 
+        self.layout_imagen.addWidget(self.canvas_imagen)
+
+    def graficar_canal(self):
+        canal=self.box_cambiar_canal.currentText()
+        img_canal=self.__coord.retornar_canal(canal)
+        self.canvas_imagen.graficar_imagen(img_canal)
+
+    def graficar_espacio_color(self):
+        espacio_color=self.box_espacio_color.currentText()
+        img_espacio_color=self.__coord.retornar_espacio_color(espacio_color)
+        self.canvas_imagen.graficar_imagen(img_espacio_color)
+
+    def graficar_operaciones(self):
+        operacion=self.box_operaciones.currentText()
+        escalar=self.edit_operacion.text()
+        img_canal=self.__coord.retornar_operacion(operacion,escalar)
+        self.canvas_imagen.graficar_imagen(img_canal)
+
     def cargar_img(self):
         archivo_cargado, _ = QFileDialog.getOpenFileName(self, "Abrir imagen","","Archivos jpg (*.jpg)","","Archivos png (*.png)")
         if archivo_cargado !='':
             self.boton_histograma.setEnabled(True)
             self.boton_contar.setEnabled(True)
             self.boton_cambios.setEnabled(True)
-            self.img=cv2.imread(archivo_cargado)
-            self.__coord.cargar_img(self.img)
+
+            self.ok_canales.setEnabled(True)
+            self.ok_espacio_color.setEnabled(True)
+            self.ok_operaciones.setEnabled(True)
+
+            img=cv2.imread(archivo_cargado)
+            resultado=self.__coord.cargar_img(img)
+            self.canvas_imagen.graficar_imagen(img)
+            msj = QMessageBox(self)
+            msj.setText(resultado)
+            msj.show() 
 
         else:
             msj = QMessageBox(self)
@@ -69,14 +119,25 @@ class Ventanappal(QMainWindow):
             msj.show()
 
     def graficar_histograma(self):
-        pass
+        img=self.__coord.retornar_imagen()
+        self.canvas_histograma.graficar_histograma(img)
 
-    def graficar_cambios(self):
+    def graficar_recorte(self):
         xi=self.edit_xi.text()
         xf=self.edit_xf.text()
         yi=self.edit_yi.text()
         yf=self.edit_xf.text()
 
+
+        if xi!='' and xf!='' and yi!='' and yf!='':
+            if xi<self.edit_filas and xf<=self.edit_filas and yi<self.edit_columnas and yf<=self.edit_columnas:
+                img_recorte=self.__coord.recortar_img(int(xi),int(xf),int(yi),int(yf))
+                self.canvas_imagen.graficar_imagen(img_recorte)
+
+        else:
+            msj = QMessageBox(self)
+            msj.setText('Ingrese un valor válido')
+            msj.show()
     def contar_celulas(self):
         pass
 

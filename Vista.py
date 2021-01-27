@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QMessageBox, QVBoxLayout
 from PyQt5.uic import loadUi
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import cv2
+import numpy as np
 
 from matplotlib.figure import Figure
 
@@ -17,7 +18,7 @@ class Dibujo(FigureCanvas):
 
     def graficar_imagen(self,img):
         self.axes.clear()
-        self.axes.imshow(img, cmap="gray", vmin=0, vmax=255)
+        self.axes.imshow(img,vmin=0, vmax=255)
         self.axes.figure.canvas.draw()
 
     def graficar_histograma(self,img):
@@ -37,8 +38,9 @@ class Dibujo(FigureCanvas):
 
     def graficar_mascara(self,img,mascara):
         self.axes.clear()
-        self.axes.imshow(img==mascara, cmap="gray", vmin=0, vmax=255)
+        self.axes.imshow(img==mascara)
         self.axes.figure.canvas.draw()
+
 
 class Ventanappal(QMainWindow):
     def __init__(self, parent=None):
@@ -88,12 +90,16 @@ class Ventanappal(QMainWindow):
     def graficar_mascara(self):
         mascara=int(self.box_mascara.currentText())
         imagen=self.__coord.contar_celulas()
+        #imagen_original=self.__coord.retornar_imagen()
         
+        pixels=np.count_nonzero(imagen[1]==mascara)
+
         self.canvas_imagen.graficar_mascara(imagen[1],mascara)
+        self.area_elemento.setText(str(pixels)+' pixeles^2')
 
     def graficar_canal(self):
         canal=self.box_cambiar_canal.currentText()
-        print(canal)
+   
         img_canal=self.__coord.retornar_canal(canal)
         self.canvas_imagen.graficar_imagen(img_canal)
 
@@ -159,11 +165,6 @@ class Ventanappal(QMainWindow):
         yi=self.edit_yi.text()
         yf=self.edit_yf.text()
 
-        # img_recorte=self.__coord.recortar_img(int(xi),int(xf),int(yi),int(yf))
-        # self.canvas_imagen.graficar_imagen(img_recorte)
-        # print(int(xi),int(xf),int(yi),int(yf))
-        # print(img_recorte)
-        
         
         if str(xi) !='' and str(xf) != '' and str(yi) != '' and str(yf) != '' and xf>xi and yf>yi:
             if int(xi)<int(self.edit_columnas.text()) and int(xf)<=int(self.edit_columnas.text()) and int(yi)<int(self.edit_filas.text()) and int(yf)<=int(self.edit_filas.text()):

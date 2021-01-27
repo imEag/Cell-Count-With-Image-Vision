@@ -77,7 +77,7 @@
        <x>0</x>
        <y>-66</y>
        <width>522</width>
-       <height>365</height>
+       <height>391</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -304,20 +304,6 @@
         </property>
        </widget>
       </item>
-      <item row="7" column="2" colspan="2">
-       <widget class="QPushButton" name="boton_recorte">
-        <property name="text">
-         <string>Graficar recorte</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0" colspan="2">
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>Deshacer cambios</string>
-        </property>
-       </widget>
-      </item>
       <item row="16" column="3">
        <widget class="QPushButton" name="boton_mascara">
         <property name="text">
@@ -480,6 +466,32 @@
        <widget class="QLabel" name="label_15">
         <property name="text">
          <string>   ||        # De máscara</string>
+        </property>
+       </widget>
+      </item>
+      <item row="17" column="2">
+       <widget class="QLabel" name="label_16">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Área del elemento:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="17" column="3">
+       <widget class="QLineEdit" name="area_elemento">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0" colspan="4">
+       <widget class="QPushButton" name="boton_recorte">
+        <property name="text">
+         <string>Graficar recorte</string>
         </property>
        </widget>
       </item>

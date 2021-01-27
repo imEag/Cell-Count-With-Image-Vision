@@ -17,9 +17,7 @@ class sistema:
         
     def retornar_info_img(self):
         row, col, chn=np.shape(self.imagen)
-        # print('Filas    ', row)
-        # print('Columnas ', col)
-        # print('Canales  ', chn)
+
         
         imaR=np.copy(self.imagen)
         imaR[:,:,1]=0
@@ -133,9 +131,9 @@ class sistema:
         blur = cv2.GaussianBlur(imgB,(5,5),0)
         _,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
         elem,mask=cv2.connectedComponents(th3)
-        print(elem)
+        
 
-        return elem,mask
+        return elem,mask,th3
     
     
     

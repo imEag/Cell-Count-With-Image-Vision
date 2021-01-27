@@ -118,7 +118,24 @@ class sistema:
         img2=img2*255/np.max(img2)
         return img2
     
-    
+    def contar_celulas(self):
+        imgB=np.copy(self.imagen)
+        imgB=cv2.cvtColor(imgB,cv2.COLOR_RGB2BGR)
+        imgB[:,:,1]=0
+        imgB[:,:,2]=0
+        
+        imgB = cv2.cvtColor(imgB, cv2.COLOR_BGR2GRAY)
+
+
+        kernel = np.ones((3,3),np.uint8)
+        imgB = cv2.dilate(imgB,kernel,iterations = 2)
+        imgB = cv2.erode(imgB,kernel,iterations = 2)
+        blur = cv2.GaussianBlur(imgB,(5,5),0)
+        _,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+        elem,mask=cv2.connectedComponents(th3)
+        print(elem)
+
+        return elem,mask
     
     
     

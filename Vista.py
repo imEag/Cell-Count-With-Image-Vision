@@ -164,7 +164,7 @@ class Ventanappal(QMainWindow):
             msj.show()
         
     def contar_celulas(self):
-        pass
+        self.__coord.contar_celulas()
 
     def equalizar(self):
         img_equalizada=self.__coord.equalizar()

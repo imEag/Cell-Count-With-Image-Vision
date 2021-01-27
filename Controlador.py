@@ -34,7 +34,8 @@ class Controlador():
     def equalizar(self):
         return self.__modelo.equalizar()
 
-
+    def contar_celulas(self):
+        return self.__modelo.contar_celulas()
 
         
 def main():

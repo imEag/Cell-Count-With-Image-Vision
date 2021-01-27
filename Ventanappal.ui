@@ -40,7 +40,7 @@
      <rect>
       <x>30</x>
       <y>340</y>
-      <width>901</width>
+      <width>651</width>
       <height>301</height>
      </rect>
     </property>
@@ -49,7 +49,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>881</width>
+       <width>631</width>
        <height>281</height>
       </rect>
      </property>
@@ -59,9 +59,9 @@
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>940</x>
+      <x>710</x>
       <y>340</y>
-      <width>291</width>
+      <width>541</width>
       <height>301</height>
      </rect>
     </property>
@@ -75,37 +75,16 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
-       <width>275</width>
-       <height>379</height>
+       <y>-37</y>
+       <width>522</width>
+       <height>365</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="4" column="0" colspan="2">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>px inicial en Y:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0" colspan="4">
-       <widget class="QPushButton" name="boton_recorte">
-        <property name="text">
-         <string>Graficar recorte</string>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="0" colspan="4">
-       <widget class="Line" name="line_5">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="14" column="0" colspan="4">
-       <widget class="QPushButton" name="boton_cerrar">
-        <property name="text">
-         <string>Cerrar</string>
+      <item row="1" column="2" colspan="2">
+       <widget class="QLineEdit" name="edit_xi">
+        <property name="placeholderText">
+         <string>0</string>
         </property>
        </widget>
       </item>
@@ -116,38 +95,21 @@
         </property>
        </widget>
       </item>
-      <item row="7" column="0" colspan="3">
-       <widget class="QComboBox" name="box_cambiar_canal">
-        <item>
-         <property name="text">
-          <string>TODOS LOS CANALES</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Rojo</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Verde</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Azul</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="10" column="0" colspan="4">
+      <item row="13" column="0" colspan="4">
        <widget class="Line" name="line_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
-      <item row="8" column="0" colspan="3">
+      <item row="4" column="2" colspan="2">
+       <widget class="QLineEdit" name="edit_yi">
+        <property name="placeholderText">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0" colspan="3">
        <widget class="QComboBox" name="box_cambiar_colores">
         <item>
          <property name="text">
@@ -196,45 +158,48 @@
         </item>
        </widget>
       </item>
-      <item row="4" column="2" colspan="2">
-       <widget class="QLineEdit" name="edit_yi">
-        <property name="placeholderText">
-         <string>0</string>
-        </property>
+      <item row="10" column="0" colspan="3">
+       <widget class="QComboBox" name="box_cambiar_canal">
+        <item>
+         <property name="text">
+          <string>TODOS LOS CANALES</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rojo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Verde</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Azul</string>
+         </property>
+        </item>
        </widget>
       </item>
-      <item row="1" column="2" colspan="2">
-       <widget class="QLineEdit" name="edit_xi">
-        <property name="placeholderText">
-         <string>0</string>
-        </property>
-       </widget>
-      </item>
-      <item row="13" column="0" colspan="4">
-       <widget class="QPushButton" name="boton_contar">
-        <property name="text">
-         <string>Contar células</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="3">
+      <item row="11" column="3">
        <widget class="QPushButton" name="ok_espacio_color">
         <property name="text">
          <string>Ok</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="1" colspan="2">
+      <item row="12" column="1" colspan="2">
        <widget class="QLineEdit" name="edit_operacion">
         <property name="placeholderText">
          <string>0</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="0" colspan="2">
-       <widget class="QLabel" name="label_5">
+      <item row="16" column="0" colspan="4">
+       <widget class="QPushButton" name="boton_contar">
         <property name="text">
-         <string>px final en Y:</string>
+         <string>Contar células</string>
         </property>
        </widget>
       </item>
@@ -245,17 +210,17 @@
         </property>
        </widget>
       </item>
+      <item row="15" column="0" colspan="4">
+       <widget class="QPushButton" name="boton_equalizar">
+        <property name="text">
+         <string>Equalizar</string>
+        </property>
+       </widget>
+      </item>
       <item row="5" column="2" colspan="2">
        <widget class="QLineEdit" name="edit_yf">
         <property name="placeholderText">
          <string>0</string>
-        </property>
-       </widget>
-      </item>
-      <item row="12" column="0" colspan="4">
-       <widget class="QPushButton" name="boton_equalizar">
-        <property name="text">
-         <string>Equalizar</string>
         </property>
        </widget>
       </item>
@@ -266,6 +231,13 @@
         </property>
        </widget>
       </item>
+      <item row="5" column="0" colspan="2">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>px final en Y:</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0" colspan="4">
        <widget class="QLabel" name="label">
         <property name="text">
@@ -273,14 +245,42 @@
         </property>
        </widget>
       </item>
-      <item row="9" column="3">
+      <item row="12" column="3">
        <widget class="QPushButton" name="ok_operaciones">
         <property name="text">
          <string>Ok</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="0">
+      <item row="14" column="0" colspan="4">
+       <widget class="Line" name="line_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="17" column="0" colspan="4">
+       <widget class="QPushButton" name="boton_cerrar">
+        <property name="text">
+         <string>Cerrar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>px inicial en Y:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="4">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="0">
        <widget class="QComboBox" name="box_operaciones">
         <item>
          <property name="text">
@@ -304,17 +304,24 @@
         </item>
        </widget>
       </item>
-      <item row="7" column="3">
+      <item row="10" column="3">
        <widget class="QPushButton" name="ok_canales">
         <property name="text">
          <string>Ok</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="4">
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+      <item row="7" column="0" colspan="2">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Deshacer cambios</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2" colspan="2">
+       <widget class="QPushButton" name="boton_recorte">
+        <property name="text">
+         <string>Graficar recorte</string>
         </property>
        </widget>
       </item>

@@ -16,9 +16,12 @@ class Dibujo(FigureCanvas):
         self.axes = self.figura.add_subplot(111)
         FigureCanvas.__init__(self,self.figura)
 
-    def graficar_imagen(self,img):
+    def graficar_imagen(self,img,op=0):
         self.axes.clear()
-        self.axes.imshow(img,vmin=0, vmax=255)
+        if op==0:
+            self.axes.imshow(img,cmap='gray',vmin=0, vmax=255)
+        else:
+            self.axes.imshow(img,vmin=0, vmax=255)
         self.axes.figure.canvas.draw()
 
     def graficar_histograma(self,img):
@@ -134,14 +137,9 @@ class Ventanappal(QMainWindow):
             self.boton_equalizar.setEnabled(True)
             self.boton_mascara.setEnabled(True)
             self.ok_operaciones.setEnabled(True)
-<<<<<<< HEAD
             
 
-||||||| 716ec10
-
-=======
             
->>>>>>> conteo-cell
             
             img=cv2.imread(archivo_cargado)
             img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -199,13 +197,14 @@ class Ventanappal(QMainWindow):
         n_elementos=lista_celulas[0]
         img=lista_celulas[1]
         img=cv2.putText(img,str(n_elementos),(4,90), cv2.FONT_HERSHEY_SIMPLEX, 2,(255,255,0),2,cv2.LINE_AA)
-        self.canvas_imagen.graficar_imagen(img)
+        self.canvas_imagen.graficar_imagen(img,1)
 
     def equalizar(self):
         img_equalizada=self.__coord.equalizar()
         self.canvas_imagen.graficar_imagen(img_equalizada)
         
     def cerrar(self):
+        self.close()
     def setcoord(self,coord):
         self.__coord=coord
         

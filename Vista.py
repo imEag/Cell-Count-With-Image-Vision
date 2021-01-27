@@ -35,6 +35,11 @@ class Dibujo(FigureCanvas):
         self.axes.set_xlim((0, 255))
         self.axes.figure.canvas.draw()
 
+    def graficar_mascara(self,img,mascara):
+        self.axes.clear()
+        self.axes.imshow(img==mascara, cmap="gray", vmin=0, vmax=255)
+        self.axes.figure.canvas.draw()
+
 class Ventanappal(QMainWindow):
     def __init__(self, parent=None):
         super(Ventanappal,self).__init__(parent)
@@ -53,12 +58,13 @@ class Ventanappal(QMainWindow):
         self.boton_contar.setEnabled(False)
         self.boton_recorte.setEnabled(False)
         self.boton_equalizar.setEnabled(False)
+        self.boton_mascara.setEnabled(False)
 
         self.ok_canales.setEnabled(False)
         self.ok_espacio_color.setEnabled(False)
         self.ok_operaciones.setEnabled(False)
 
-
+        self.boton_mascara.clicked.connect(self.graficar_mascara)
         self.boton_contar.clicked.connect(self.contar_celulas)
         self.boton_recorte.clicked.connect(self.graficar_recorte)
         self.boton_equalizar.clicked.connect(self.equalizar)
@@ -77,6 +83,13 @@ class Ventanappal(QMainWindow):
         self.canvas_imagen = Dibujo(self.campo_img)
  
         self.layout_img.addWidget(self.canvas_imagen)
+
+
+    def graficar_mascara(self):
+        mascara=int(self.box_mascara.currentText())
+        imagen=self.__coord.contar_celulas()
+        
+        self.canvas_imagen.graficar_mascara(imagen[1],mascara)
 
     def graficar_canal(self):
         canal=self.box_cambiar_canal.currentText()
@@ -105,7 +118,7 @@ class Ventanappal(QMainWindow):
             self.ok_espacio_color.setEnabled(True)
             self.ok_operaciones.setEnabled(True)
             self.boton_equalizar.setEnabled(True)
-
+            self.boton_mascara.setEnabled(True)
             
             img=cv2.imread(archivo_cargado)
             img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -164,7 +177,11 @@ class Ventanappal(QMainWindow):
             msj.show()
         
     def contar_celulas(self):
-        self.__coord.contar_celulas()
+        lista_celulas=self.__coord.contar_celulas()
+        n_elementos=lista_celulas[0]
+        img=lista_celulas[1]
+        img=cv2.putText(img,str(n_elementos),(4,90), cv2.FONT_HERSHEY_SIMPLEX, 2,(255,255,0),2,cv2.LINE_AA)
+        self.canvas_imagen.graficar_imagen(img)
 
     def equalizar(self):
         img_equalizada=self.__coord.equalizar()

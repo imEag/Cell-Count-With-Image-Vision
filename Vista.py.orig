@@ -126,15 +126,13 @@ class Ventanappal(QMainWindow):
             self.ok_espacio_color.setEnabled(True)
             self.ok_operaciones.setEnabled(True)
             self.boton_equalizar.setEnabled(True)
-            self.boton_mascara.setEnabled(True)
-            self.ok_operaciones.setEnabled(True)
 <<<<<<< HEAD
-            
+            self.ok_operaciones.setEnabled(True)
 
 ||||||| 716ec10
 
 =======
-            
+            self.boton_mascara.setEnabled(True)
 >>>>>>> conteo-cell
             
             img=cv2.imread(archivo_cargado)
@@ -205,6 +203,7 @@ class Ventanappal(QMainWindow):
         self.canvas_imagen.graficar_imagen(img_equalizada)
         
     def cerrar(self):
+        self.close()
     def setcoord(self,coord):
         self.__coord=coord
         

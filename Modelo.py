@@ -116,6 +116,7 @@ class sistema:
         img2=img2*255/np.max(img2)
         return img2
     
+
     def contar_celulas(self):
         imgB=np.copy(self.imagen)
         imgB=cv2.cvtColor(imgB,cv2.COLOR_RGB2BGR)
@@ -131,12 +132,26 @@ class sistema:
         blur = cv2.GaussianBlur(imgB,(5,5),0)
         _,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
         elem,mask=cv2.connectedComponents(th3)
-        
+        return elem,mask
 
-        return elem,mask,th3
-    
-    
-    
+      
+
+    def retornar_operacion(self, op, escalar):
+        img = np.copy(self.imagen_recortada)
+        escalar = int(escalar)
+        if op == 'SUMAR':
+            img2 = img + escalar
+            return img2
+        elif op == 'RESTAR':
+            img2 = img - escalar
+            return img2
+        elif op == 'MULTIPLICAR':
+            img2 = img * escalar
+            return img2
+        elif op == 'DIVIDIR':
+            img2 = img / escalar
+            return img2
+
     
     
     

@@ -118,7 +118,6 @@ class sistema:
         img2=img2*255/np.max(img2)
         return img2
     
-<<<<<<< HEAD
     def contar_celulas(self):
         imgB=np.copy(self.imagen)
         imgB=cv2.cvtColor(imgB,cv2.COLOR_RGB2BGR)
@@ -137,24 +136,6 @@ class sistema:
         print(elem)
 
         return elem,mask
-=======
-    def retornar_operacion(self, op, escalar):
-        img = np.copy(self.imagen_recortada)
-        escalar = int(escalar)
-        if op == 'SUMAR':
-            img2 = img + escalar
-            return img2
-        elif op == 'RESTAR':
-            img2 = img - escalar
-            return img2
-        elif op == 'MULTIPLICAR':
-            img2 = img * escalar
-            return img2
-        elif op == 'DIVIDIR':
-            img2 = img / escalar
-            return img2
-    
->>>>>>> operaciones
     
     
     

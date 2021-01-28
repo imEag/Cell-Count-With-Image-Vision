@@ -127,8 +127,9 @@ class sistema:
 
 
         kernel = np.ones((3,3),np.uint8)
-        imgB = cv2.dilate(imgB,kernel,iterations = 2)
         imgB = cv2.erode(imgB,kernel,iterations = 2)
+        imgB = cv2.dilate(imgB,kernel,iterations = 2)
+
         blur = cv2.GaussianBlur(imgB,(5,5),0)
         _,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
         elem,mask=cv2.connectedComponents(th3)

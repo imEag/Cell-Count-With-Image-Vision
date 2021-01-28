@@ -75,7 +75,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-66</y>
+       <y>-92</y>
        <width>522</width>
        <height>391</height>
       </rect>
@@ -322,6 +322,11 @@
        <widget class="QComboBox" name="box_mascara">
         <item>
          <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>1</string>
          </property>
         </item>
@@ -455,17 +460,12 @@
           <string>27</string>
          </property>
         </item>
-        <item>
-         <property name="text">
-          <string>28</string>
-         </property>
-        </item>
        </widget>
       </item>
       <item row="16" column="1">
        <widget class="QLabel" name="label_15">
         <property name="text">
-         <string>   ||        # De máscara</string>
+         <string>   ||        Máscara</string>
         </property>
        </widget>
       </item>
